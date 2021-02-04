@@ -1,8 +1,11 @@
 package org.team.service;
 
 import org.springframework.stereotype.Component;
+import org.team.domain.LogEvent;
 
 @Component
 public class CustomLogger {
-    //Send log worthy stuff to H2 maybe?
+    public void logEvent(LogEvent logEvent) {
+
+    }
 }
