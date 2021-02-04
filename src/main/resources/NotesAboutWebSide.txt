@@ -1,0 +1,5 @@
+This setup is going to be so that I can have a simple example project in a single jar. It is not representative of how
+I would prefer things to be.
+
+Ideally, a separate React / Angular / SPA style project would be preferred that has independence in terms of
+build, deployment, and runtime.  While sharing the Bounded Context for the supporting service(s).

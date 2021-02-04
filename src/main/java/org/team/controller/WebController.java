@@ -10,5 +10,13 @@ public class WebController {
         return "index";
     }
 
-    //TODO now will have to consider serving more pages for list/submit
+    @RequestMapping(value = "/cs")
+    public String cs() {
+        return "cs";
+    }
+
+    @RequestMapping(value = "/upload-error")
+    public String error() {
+        return "error";
+    }
 }

@@ -1,0 +1,7 @@
+This service is setup to be simple for the purposes of wiring up an example.  It will not handle horizontal scaling,
+for example.  Also the data layer is mostly bogus.
+
+In ideal conditions the following would be a generally more appropriate direction.  The log layer could be sent out
+as events in a stream to something like Kinesis and stored however might be preferred or even trigger lambdas to further
+interrogate.  On the side of the files, they really should be stored into S3 or another storage solution with better
+handling of large mostly static content.
