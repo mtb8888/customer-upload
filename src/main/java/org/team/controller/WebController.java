@@ -5,9 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class WebController {
-    //Hook into React via index.html
     @RequestMapping(value = "/")
     public String index() {
         return "index";
     }
+
+    //TODO now will have to consider serving more pages for list/submit
 }

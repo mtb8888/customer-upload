@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class LogEvent {
     private String className;
     private String methodName;
-    private String eventLevel; //maybe enum?
+    private String eventLevel;
     private String eventDescription;
     private LocalDateTime eventTime;
     private @Id Long id;

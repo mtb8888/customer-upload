@@ -17,7 +17,7 @@ public class CustomLogger {
         this.logEventRepository = logEventRepository;
     }
 
-    public void logEvent(LogEvent logEvent) {
+    private void logEvent(LogEvent logEvent) {
         logEventRepository.save(logEvent);
     }
 
