@@ -5,3 +5,8 @@ In ideal conditions the following would be a generally more appropriate directio
 as events in a stream to something like Kinesis and stored however might be preferred or even trigger lambdas to further
 interrogate.  On the side of the files, they really should be stored into S3 or another storage solution with better
 handling of large mostly static content.
+
+Naming change, because using the term upload on the get by Id path was bothering me.
+
+Tried to merge everything into a single controller, but still get a template mapping issue.  CS page would also not
+work since the model wouldn't come from where I'd want in the data service endpoint.

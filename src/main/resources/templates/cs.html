@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head lang="en">
         <meta charset="UTF-8"/>
         <title>Customer Support</title>
         <link rel="stylesheet" href="/main.css" />
     </head>
     <body>
-<!--List out the objects, might be messy binary.. would have been nice to have been a link to download S3 instead-->
+        <div class="container" id="cs-file-table">
+            <h2>File list</h2>
+            <table>
+                <tr>
+                    <th>File Name</th>
+                    <th>Link to Download</th>
+                </tr>
+<!--Similar to form page, I would need to be able to get aggregate from /bundle/list-->
+                <tr th:each="bundle,iterStat : ${bundleList}" th:class="${iterStat.odd}? 'odd'">
+                    <td th:text="${bundle.fileName}"></td>
+                    <td th:href=@{/bundle/${bundle.id}/file-download}>link</td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>

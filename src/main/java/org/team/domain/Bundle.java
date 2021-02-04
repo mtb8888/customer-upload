@@ -1,13 +1,14 @@
 package org.team.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class UploadBundle {
+public class Bundle {
     private String fileName;
     private byte[] content;
-    private @Id Long id;
+    private @Id @GeneratedValue Long id;
 
     public String getFileName() {
         return fileName;

@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head lang="en">
         <meta charset="UTF-8"/>
         <title>Customer Upload</title>
         <link rel="stylesheet" href="/main.css" />
     </head>
     <body>
-<!--Create the upload form on this page-->
+        <div class="container" id="cust-upload">
+            <h2>Select file to upload</h2>
+<!--Darn, this really doesn't allow me to map to other request.  I may not get this working.-->
+            <form method="post" th:action="@{/bundle}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="file" name="file" class="form-control-file">
+                </div>
+                <button type="submit" class="btn btn-primary">Upload File</button>
+            </form>
+        </div>
     </body>
 </html>

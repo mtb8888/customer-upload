@@ -2,37 +2,37 @@ package org.team.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.team.domain.UploadBundle;
-import org.team.repository.UploadBundleRepository;
+import org.team.domain.Bundle;
+import org.team.repository.BundleRepository;
 
 import java.time.LocalDateTime;
 
 @Service
-public class UploadService {
+public class BundleService {
 
     private CustomLogger logger;
 
-    private UploadBundleRepository uploadBundleRepository;
+    private BundleRepository bundleRepository;
 
     @Autowired
-    private UploadService(UploadBundleRepository uploadBundleRepository, CustomLogger logger) {
-        this.uploadBundleRepository = uploadBundleRepository;
+    private BundleService(BundleRepository bundleRepository, CustomLogger logger) {
+        this.bundleRepository = bundleRepository;
         this.logger = logger;
     }
 
-    public void validateUploadAndPersist(UploadBundle uploadBundle) throws Exception {
-        if (validateBinary(uploadBundle.getContent())) {
+    public void validateUploadAndPersist(Bundle bundle) throws Exception {
+        if (validateBinary(bundle.getContent())) {
             logger.log(this.getClass().getSimpleName(),
                     "validateUploadAndPersist",
                     "info",
-                    "Validated " + uploadBundle.getFileName(),
+                    "Validated " + bundle.getFileName(),
                     LocalDateTime.now());
-            uploadBundleRepository.save(uploadBundle);
+            bundleRepository.save(bundle);
         } else {
             logger.log(this.getClass().getSimpleName(),
                     "validateUploadAndPersist",
                     "error",
-                    "File not valid, " + uploadBundle.getFileName(),
+                    "File not valid, " + bundle.getFileName(),
                     LocalDateTime.now());
             throw new Exception("Failed to persist submitted file");
         }

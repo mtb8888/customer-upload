@@ -3,3 +3,14 @@ I would prefer things to be.
 
 Ideally, a separate React / Angular / SPA style project would be preferred that has independence in terms of
 build, deployment, and runtime.  While sharing the Bounded Context for the supporting service(s).
+
+Looking into the options available with my current setup, it brings up more issues with not having a standalone.
+In a react app I could have data being polled by a component and updating it's state for passing down into more
+specific components to deal with table/row concerns.  Now with this style, it will have to follow a more hardwired
+model environment from the WebController, I don't think I can make calls to UploadController from those pages.  Likely,
+the output here is going to be messy, if I can even get it working.  The intent, however, was to have a table with
+filenames and clickable link that would either save a file from the binary in model or call back out to download from
+UploadController with an id.
+
+So the above turns out to have some issues with how to get the templates calling the endpoints I want.  Hopefully,
+what I've at least put into the files makes sense to read for goal, if not functionally correct.

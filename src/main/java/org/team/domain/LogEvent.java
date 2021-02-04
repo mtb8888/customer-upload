@@ -1,6 +1,7 @@
 package org.team.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 
@@ -11,7 +12,7 @@ public class LogEvent {
     private String eventLevel;
     private String eventDescription;
     private LocalDateTime eventTime;
-    private @Id Long id;
+    private @Id @GeneratedValue Long id;
 
     public String getClassName() {
         return className;
